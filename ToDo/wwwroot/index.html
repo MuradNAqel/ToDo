@@ -2,19 +2,42 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <link href="CSS/ToDo.css" rel="stylesheet" />
+    <title>ToDo</title>
 </head>
 <body>
-    <div class="row main-row">
-        <div class="column">
-            <h1>Good Morning, Murad! ✌️</h1>
-            <h1>Date </h1>
+    <div class="container-main">
+        <div class="row row-heaeder">
+            <div class="column">
+                <h2 style="font-family: emoji;">Good Morning, Murad! ✌️</h2>
+                <h3 style="color: #8C8C8C;font-style:normal">Today, Sun 29 Dec 2024 </h3>
+            </div>
+                <div class="row row-select">
+                    <select class="select-day">
+                        <option>Today</option>
+                    </select>
+                    <div class="menu-button">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
         </div>
-        <div class="row select-row">
-            <select>
-                <option>Today</option>
-            </select>
-            <select></select>
+        <div class="list-Item">
+            <div class="row row-list">
+                <div class="row">
+                    <input type="checkbox"/>
+                    <label class="toDoTxt">Finish this page</label>
+                    <label>👌</label>
+                </div>
+                <div class="row">
+                    <label class="time-box">🕒 11:00-12:00</label>
+                    <div class="dotsBox">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
