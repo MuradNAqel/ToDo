@@ -45,11 +45,13 @@ function renderTaskList() {
         checkBox.checked = task.isDone;
         checkBox.addEventListener("change", () => {
             task.isDone = checkBox.checked;
+            ToDoTxtElement.style.textDecoration = task.isDone ? "line-through" : "none";
         });
 
         const ToDoTxtElement = document.createElement("label");
         ToDoTxtElement.className = "toDoTxt";
         ToDoTxtElement.textContent = task.text;
+        ToDoTxtElement.style.textDecoration = task.isDone ? "line-through" : "none";
 
         // Create row for action buttons
         const BtnsRow = document.createElement("div");
@@ -57,13 +59,25 @@ function renderTaskList() {
 
         const BtnEdit = document.createElement("button");
         BtnEdit.textContent = "🛠️";
-
         BtnEdit.addEventListener("click", () => {
-            const updatedTask = prompt("Edit Task:", task.text);
-            if (updatedTask !== null && updatedTask.trim() !== "") {
-                tasks[index].text = updatedTask.trim();
+            ToDoTxt.value = task.text;
+            addBtn.innerText = "Save";
+
+            const saveHandler = () => {
+                task.text = ToDoTxt.value.trim();
+                addBtn.innerText = "Add ToDo";
+                ToDoTxt.value = "";
+                ToDoList.innerHTML = "";
                 renderTaskList();
-            }
+
+                // Restore default add functionality
+                addBtn.removeEventListener("click", saveHandler);
+                addBtn.addEventListener("click", addToDo);
+            };
+
+            // Update add button behavior
+            addBtn.removeEventListener("click", addToDo); // Temporarily remove the default listener
+            addBtn.addEventListener("click", saveHandler);
         });
 
         const BtnDelete = document.createElement("button");
@@ -86,24 +100,3 @@ function renderTaskList() {
         ToDoList.appendChild(ToDo);
     });
 }
-
-
-//<div class="row row-list">
-
-//    <div class="row">
-
-//            <input type="checkbox" />
-//            <label class="toDoTxt">Finish this page</label>
-//            <label>👌</label>
-//    </div>
-
-//    <div class="row">
-//            <label class="time-box">🕒 11:00-12:00</label>
-//            <div class="dotsBox">
-//                <div class="dot"></div>
-//                <div class="dot"></div>
-//                <div class="dot"></div>
-//            </div>
-//    </div>
-
-//    </div>
