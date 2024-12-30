@@ -6,39 +6,49 @@
     <title>ToDo</title>
 </head>
 <body>
+    <div id="edit" class="edit"></div>
     <div class="container-main">
         <div class="row row-heaeder">
             <div class="column">
                 <h2 style="font-family: emoji;">Good Morning, Murad! ✌️</h2>
-                <h3 style="color: #8C8C8C;font-style:normal">Today, Sun 29 Dec 2024 </h3>
+                <h3 id="date" style="color:#8C8C8C; font-style:normal"></h3>
             </div>
-                <div class="row row-select">
-                    <select class="select-day">
-                        <option>Today</option>
-                    </select>
-                    <div class="menu-button">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
+            <div class="row row-select">
+                <select class="select-day">
+                    <option>Today</option>
+                </select>
+                <div class="menu-button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
                 </div>
+            </div>
         </div>
-        <div class="list-Item">
-            <div class="row row-list">
-                <div class="row">
-                    <input type="checkbox"/>
-                    <label class="toDoTxt">Finish this page</label>
-                    <label>👌</label>
-                </div>
-                <div class="row">
-                    <label class="time-box">🕒 11:00-12:00</label>
-                    <div class="dotsBox">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="ToDoForm">  
+                <input type="text" id="ToDoInput" class="ToDoInput" placeholder="Write a ToDo" />
+                <button class="ToDoButton" data-id="" id="BtnAddToDo">Add ToDo</button>
+        </div>
+        <div id="ToDos">
         </div>
     </div>
+    <script src="JavaScript/ToDo.js"></script>
 </body>
 </html>
+
+
+
+
+<!--<div class="row row-list">
+    <div class="row">
+        <input type="checkbox" />
+        <label class="toDoTxt">Finish this page</label>
+        <label>👌</label>
+    </div>
+    <div class="row">
+        <label class="time-box">🕒 11:00-12:00</label>
+        <div class="dotsBox">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</div>-->

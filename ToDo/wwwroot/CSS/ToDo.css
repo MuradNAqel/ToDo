@@ -13,6 +13,19 @@
     align-content: center;
 }
 
+.edit {
+    height: 400px;
+    width: 400px;
+}
+
+.ToDoForm {
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    font-size: small;
+    margin-bottom: 20px;
+}
 .row-heaeder {
     justify-content: space-between;
 }
@@ -22,8 +35,36 @@
     background-color: white;
     border-radius: 8px;
     padding: 6px;
+    display: flex;
 }
 
+.ToDoInput {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height: 36px;
+    width: 450px;
+    background-color: white;
+    border: none;
+    
+    padding-left: 7px;
+    margin-right: 0px;
+}
+
+.ToDoInput:hover {
+        border: 2px solid black;
+}
+
+.ToDoButton {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-left: 0px;
+    border: none;
+    background-color: white;
+    font-family: cursive;
+}
+.ToDoButton:hover {
+    border: 2px solid black;
+}
 .select-day {
     min-width: 20px;
     margin-right: 7px;
